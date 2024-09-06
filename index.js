@@ -24,7 +24,11 @@ app.use(morgan('combined'));
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use('/public', express.static('public'));
+
+//Pastas estáticas
+app.use('/public', express.static("public"));
+app.use('/boxicons/css', express.static("node_modules/boxicons/css"));
+app.use('/boxicons/dist', express.static("node_modules/boxicons/dist"));
 
 //Definindo layout das páginas
 app.engine("handlebars", handlebars.engine({ defaultLayout: "main" }));

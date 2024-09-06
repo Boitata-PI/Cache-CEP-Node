@@ -1,48 +1,66 @@
-<head>
-    <link rel="stylesheet" href="/public/css/create.css">
-</head>
+<section class="section-modal">
 
-<nav class="navbar">
-  <div class="container-fluid">
-    <a href="/todo" class="navbar-brand a">ToDo List</a>
-    <a onclick="sair()" class="navbar-brand a">Sair</a>
-  </div>
-</nav>
+    <div class="container">
+        <h2>Tela de Consulta</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Origem</th>
+                    <th>Data Contato</th>
+                    <th>Observação</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each clientes}}
+                <tr>
+                    <td>{{this.nome}}</td>
+                    <td>{{this.telefone}}</td>
+                    <td>{{this.origem}}</td>
+                    <td>{{this.data_contato}}</td>
+                    <td>{{this.observacao}}</td>
+                    <td>
+                        <a href="/editar/{{id}}"><button class="btn btn-primary">Editar</button></a>
+                        <a href="/excluir/{{id}}"><button class="btn btn-danger">Excluir</button></a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
 
-<div class="header-container">
-    <h1 class="tarefa">Crie sua Tarefa</h1>
-    <h2 class="info">Informações da Tarefa</h2>
-</div>
 
-<div class="container">
-    <div class="content">
-        <form action="/cadastrar" method="post" >
 
-            <div class="row">
-                <div class="col">
-                    <label for="nomeCompleto" class="form-label">Nome da tarefa</label>
-                    <input type="text" class="form-control" name="nomeTarefa" id="nomeTarefa" placeholder="Nome da Tarefa" aria-label="Nome da Tarefa">
-                </div>
-                <div class="col">
-                    <label for="dataConclusao" class="form-label">Data de Conclusão Prevista</label>
-                    <input type="date" class="form-control" name="dataConclusao" id="dataConclusao" aria-label="Data de Conclusão Prevista">
-                </div>
+    <button class="show-modal">Show Modal</button>
+    <span class="overlay"></span>
+    <div class="modal-box">
+        <form method="post" action="/cadastrar">
+            <box-icon name='check-circle' size="90px"></box-icon>
+            <h2>Completed</h2>
+            <h3>Quer adicionar uma pessoa?</h3>
+            <div class="input-box">
+                <input type="text" name="nome" placeholder="Nome" required>
             </div>
-            <div class="row">
-                <div class="col">
-                    <label for="Materia" class="form-label">Materia</label>
-                    <input type="text" class="form-control" name="nomeMateria" id="nomeMateria" placeholder="Nome da Materia" aria-label="Nome da Materia">
-                </div>
+            <div class="input-box">
+                <input type="text" name="telefone" placeholder="Telefone" required>
             </div>
-            <br>
-            <div class="mb-3">
-                <label for="descricao" class="form-label">Descrição</label>
-                <textarea class="form-control" name="descricao" id="descricao" rows="3"></textarea>
+            <div class="input-box">
+                <input type="text" name="origem" placeholder="Origem" required>
             </div>
-            <div class="botoes">
-                <button  type="submit" class="btn btn-primary btn-lg">Criar</button>
-                <button  type="button" class="btn btn-primary btn-lg" onclick="window.location.href='/todo'" >Cancelar</button>
+            <div class="input-box">
+                <input type="text" name="data_contato" placeholder="Data Contato" required>
+            </div>
+            <div class="input-box">
+                <input type="text" name="observacao" placeholder="Observação" required>
+            </div>
+            <div class="buttons">
+            <button class="close-btn">Cancelar</button>
+            <button type="submit">Open File</button>
             </div>
         </form>
+        
     </div>
-</div>
+</section>
+<script src="/public/js/modal.js"></script>
