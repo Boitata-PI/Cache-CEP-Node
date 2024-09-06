@@ -1,38 +1,96 @@
 <head>
-    <link rel="stylesheet" href="/public/css/view.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{! CSS }}
+    <link rel="stylesheet" href="/public/css/style.css">
+    <link rel="stylesheet" href="/public/css/modal.css">
+    <link rel="stylesheet" href="/boxicons/css/boxicons.min.css">
+
+    {{! JS }}
+    <script src="/boxicons/dist/boxicons.js"></script>
+
+    <title>Spider Storage</title>
+    <link rel="icon" href="/public/img/aranha-white.png" type="image/x-icon">
 </head>
 
-<nav class="navbar">
-  <div class="container-fluid">
-    <a href="/todo" class="navbar-brand a">ToDo List</a>
-    <a onclick="sair()" class="navbar-brand a">Sair</a>
-  </div>
-</nav>
+<body>
 
-{{#each task}}
-{{#dataValues}}
-    <div class="task-container">
-        <div class="back-button">
-            <a href="/todo"><ion-icon name="arrow-back-outline"></ion-icon></a>
-        </div>
-        <div class="task-details">
-            <div class="row">
-                <div class="col">
-                    <h2>{{title}}</h2>
-                </div>
-                <div class="edit-button">
-                    <a href="/edit/{{id}}" style="color:inherit">
-                        <button type="button" class="btn btn-primary">
-                            Editar
-                        </button>
-                    </a>
+    <nav class="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="/public/img/logo.png" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">{{email}}</span>
+                    <span class="profession">Legal e Daora</span>
                 </div>
             </div>
-            <p>Vencimento: {{due}}</p>
-            <p>Matéria: {{class}}</p>
-            <p>Situação: {{status}}</p>
-            <p>Descrição: {{description}}</p>
+
+            <box-icon name='chevron-right' color="#fff" size="25" class="toggle"></box-icon>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <li class="search-box">
+                    <box-icon name='search' color="white" size="25px" class="icon"></box-icon>
+                    <input type="search" placeholder="Search...">
+                </li>
+                <ul class="menu-links">
+                    <li class="nav-link" onmouseover="iconHoverIn('home-icon')" onmouseout="iconHoverOut('home-icon')">
+                        <a href="#">
+                            <box-icon name='home-alt' color="white" class="icon" id="home-icon"></box-icon>
+                            <span class="text nav-text">Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-link" onmouseover="imgHoverIn('teia-img')" onmouseout="imgHoverOut('teia-img')">
+                        <a href="#">
+                            <img src="/public/img/teia-white.png" alt="" id="teia-img">
+                            <span class="text nav-text">Teia de amigos</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-context">
+
+                <li class="" onmouseover="iconHoverIn('log-out-icon')" onmouseout="iconHoverOut('log-out-icon')">
+                    <a href="/logout">
+                        <box-icon name='log-out' color="white" class="icon" id="log-out-icon"></box-icon>
+                        <span class="text nav-text">Sair</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="moon-sun">
+                        <box-icon name='moon' color="white" class="icon moon"></box-icon>
+                        <box-icon name='sun' color="white" class="icon sun"></box-icon>
+                    </div>
+
+                    <span class="mode-text text">Venom Mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+
+                </li>
+
+            </div>
+
         </div>
-    </div>
-{{/dataValues}}
-{{/each}}
+
+    </nav>
+
+
+    <section class="create">
+
+        {{{ body }}}
+
+    </section>
+
+
+    <script src="/public/js/script.js"></script>
+
+</body>

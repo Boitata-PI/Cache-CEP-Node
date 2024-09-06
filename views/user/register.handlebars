@@ -1,29 +1,43 @@
 <head>
-    <link rel="stylesheet" href="/public/css/cadastro.css">
+    <link rel="stylesheet" href="/public/css/login.css">
 </head>
-
-<form class="form" action="/register" method="POST">
-    <div class="main-login">
-        <div class="right-login">
-            <div class="card-login">
-                <h1>Cadastro</h1>
-                <div class="cadastro-text">
-                    <span class="registro-texto">Ja tem uma conta Cadastrada? </span><a href="/index.php/user/login">Faça Login</a>
+<div class="container-login">
+    <div class="img-box">
+        <img src="/public/img/logo.png">
+    </div>
+    <div class="content-box">
+        <div class="form-box">
+            <h2>Registrar</h2>
+            <form action="/register" method="post">
+            <div class="input-box">
+                    <span>Username</span>
+                    <input type="text" placeholder="User" name="username" required>
                 </div>
-                <div class="textfield">
-                    <label for="usuario">Usuário</label>
-                    <input type="text" required name="username" placeholder="Usuário">
+                <div class="input-box">
+                    <span>Email</span>
+                    <input type="email" placeholder="@mail.com" name="email" required>
                 </div>
-                <div class="textfield">
-                    <label for="senha">Senha</label>
-                    <input type="password" required name="password" placeholder="Senha">
+                <div class="input-box">
+                    <span>Password</span>
+                    <input type="password" placeholder="password" name="password" required>
                 </div>
-                <button type="submit" class="btn-login">Cadastrar-se</button>
-            </div>
-        </div>
-        <div class="left-login">
-            <h1>Cadastre-se para ter acesso ao sistema!</h1>
-            <img src="/public/img/Menina2.png" class="left-login-image" alt="ocean">
+                <div class="input-box">
+                    <span>Confirm Password</span>
+                    <input type="password" placeholder="password" name="password" required>
+                </div>
+                <div class="input-button">
+                    <span></span>
+                    <input type="submit" value="Registrar">
+                </div>
+                <div class="input-button">
+                    <p>Have an account? <a href="/views/user/login.handlebars">
+                    <input type="button" value="Login">
+                    </a></p>
+                </div>
+            </form>
         </div>
     </div>
-</form>
+</div>
+
+
+
