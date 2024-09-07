@@ -1,5 +1,5 @@
 # ETAPAS
-O projeto ainda está em desenvolvimento:
+O projeto está concluído:
 
 - [x] Estrutura
 - [x] Front-End
@@ -13,8 +13,9 @@ O projeto ainda está em desenvolvimento:
 
 # INICIANDO PROJETO</h1>
 ### (SEMPRE CLONE DA BRANCH DE HOMOLOGAÇÃO)
-- Importe a base de dados MySQL em /bd
+- Gere o arquivo serviceAccount.json no Firebase e o coloque na raiz do projeto
 - Clone o arquivo .env.example e renomeie a cópia para .env
+- Configure o .env com suas informações do firebase
 
 ```
 git clone -b homologacao https://github.com/Boitata-PI/Cache-CEP-Node.git
