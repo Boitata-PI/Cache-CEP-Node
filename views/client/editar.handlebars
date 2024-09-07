@@ -1,0 +1,43 @@
+
+
+ <div class="container">
+        <form class="form" method="post" action="/index.php/clients/update">
+            <h2 class="form-title">Editar</h2>
+
+            <!-- id -->
+            <input type="text" name="id" value="{{id}}" hidden>
+
+            <!-- Nome -->
+            <div class="form-group">
+                <label for="name" class="form-label">Nome</label>
+                <input type="text" name="nome" class="form-input" placeholder="nome" value="{{cliente.nome}}" required>
+            </div>
+
+            <!-- telefone -->
+            <div class="form-group">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="text" name="telefone" class="form-input" placeholder="telefone" value="{{cliente.telefone}}" required>
+            </div>
+
+            <!-- Senha -->
+            <div class="form-group">
+                <label for="origem" class="form-label">Origem</label>
+                <input type="text" name="origem" class="form-input" placeholder="origem" value="{{cliente.origem}}" required>
+            </div>
+
+            <!-- Data de Nascimento -->
+            <div class="form-group">
+                <label for="data_contato" class="form-label">Data de Contato</label>
+                <input type="date" name="data_contato" class="form-input" required>
+            </div>
+
+            <!-- Observações -->
+            <div class="form-group">
+                <label for="observacao" class="form-label">Observação</label>
+                <textarea name="observacao" class="form-input" placeholder="Observação" value="{{cliente.observacao}}" rows="4"></textarea>
+            </div>
+
+            <!-- Botão de Enviar -->
+            <button type="submit" class="form-button">Submit</button>
+        </form>
+    </div>

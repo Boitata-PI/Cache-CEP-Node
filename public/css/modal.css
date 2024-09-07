@@ -1,0 +1,158 @@
+.section-modal{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+button {
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  padding: 14px 22px;
+  border: none;
+  background: var(--primary-color);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: var(--tran-04);
+}
+button:hover {
+  background-color: var(--sidebar-color);
+}
+button.show-modal{
+  position: fixed;
+  right: 0%;
+  bottom: 0%;
+  transform: translate(-50%, -50%);
+}
+
+section.active .show-modal {
+  display: none;
+}
+.overlay {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+section.active .overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-box {
+    position: absolute;
+    left: 50%;
+    top: 45vh;
+  display:inline;
+  flex-direction: column;
+  align-items: center;
+  max-width: 680px;
+  width: 100%;
+  
+  padding: 30px 20px;
+  border-radius: 24px;
+  background-color: #fff;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--tran-03);
+  transform: translate(-50%, -50%) scale(1);
+}
+section.active .modal-box {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-box h2 {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+.modal-box h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333;
+  text-align: center;
+}
+.modal-box .buttons {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-box button {
+  font-size: 14px;
+  padding: 6px 12px;
+  margin: 0 10px;
+}
+
+/* Estilo geral do modal */
+.modal {
+  display: flex; /* Usar flexbox para centralizar o conteúdo */
+  justify-content: center; /* Centralizar horizontalmente */
+  align-items: center; /* Centralizar verticalmente */
+  position: fixed; /* Fixar na tela */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Largura total da viewport */
+  height: 100vh; /* Altura total da viewport */
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com opacidade */
+  z-index: 1000; /* Colocar o modal acima de outros conteúdos */
+}
+
+/* Estilo do conteúdo do modal */
+.modal-content {
+  background-color: #fff; /* Fundo branco para o conteúdo do modal */
+  padding: 20px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve para efeito de profundidade */
+  max-width: 500px; /* Largura máxima */
+  width: 90%; /* Largura responsiva */
+}
+
+/* Estilo das caixas de entrada dentro do modal */
+.input-box {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo dos campos de entrada */
+.input-box input {
+  width: 45%; /* Ocupa toda a largura disponível */
+  padding: 10px; /* Espaçamento interno */
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid #ccc; /* Borda cinza clara */
+  border-radius: 4px; /* Bordas levemente arredondadas */
+  font-size: 16px; /* Tamanho da fonte */
+  box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+/* Estado de foco dos campos de entrada */
+.input-box input:focus {
+  border-color: #007bff; /* Cor da borda ao focar */
+  outline: none; /* Remove a borda padrão de foco */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra leve ao focar */
+}
+
+/* Estilo do texto de placeholder */
+.input-box input::placeholder {
+  color: #888; /* Cor do texto de placeholder */
+  font-style: italic; /* Itálico */
+}
+
+#sexo{
+
+  width: 45%; /* Ocupa toda a largura disponível */
+  padding: 10px; /* Espaçamento interno */
+  margin-left: 5px;
+  margin-right: 5px;
+  border: 1px solid #ccc; /* Borda cinza clara */
+  border-radius: 4px; /* Bordas levemente arredondadas */
+  font-size: 16px; /* Tamanho da fonte */
+  box-sizing: border-box;
+
+}

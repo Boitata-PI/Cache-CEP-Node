@@ -1,0 +1,100 @@
+@import "fonts.css";
+
+:root {
+    /* Colors /
+    --body-color: #AAADB6;
+    --form-bg-color: #21294E;
+    --input-bg-color: #363e63;
+    --text-color: #ddd;
+    --button-bg-color: #3A3B3C;
+    --button-text-color: #FFF;
+    --border-color: #555;
+
+    / Transition */
+    --tran-02: all 0.2s ease;
+    --tran-04: all 0.4s ease;
+}
+
+body {
+    background: var(--body-color);
+    color: var(--text-color);
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: var(--tran-02);
+}
+
+.container {
+    background: var(--form-bg-color);
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    margin-bottom: 5px;
+    display: block;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.form-label-inline {
+    display: inline;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.form-input, .form-checkbox {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    background: var(--input-bg-color);
+    color: var(--text-color);
+    font-size: 14px;
+    transition: var(--tran-04);
+}
+
+.form-input::placeholder {
+    color: #aaa;
+}
+
+textarea.form-input {
+    resize: vertical;
+}
+
+.form-button {
+    padding: 10px;
+    background: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: var(--tran-02);
+}
+
+.form-button:hover {
+    background: var(--input-bg-color);
+}

@@ -1,0 +1,43 @@
+<head>
+    <link rel="stylesheet" href="/public/css/login.css">
+</head>
+<div class="container-login">
+    <div class="img-box">
+        <img src="/public/img/logo.png">
+    </div>
+    <div class="content-box">
+        <div class="form-box">
+            <h2>Registrar</h2>
+            <form action="/index.php/user/register" method="post">
+            <div class="input-box">
+                    <span>Username</span>
+                    <input type="text" placeholder="User" name="username" required>
+                </div>
+                <div class="input-box">
+                    <span>Email</span>
+                    <input type="email" placeholder="@mail.com" name="email" required>
+                </div>
+                <div class="input-box">
+                    <span>Password</span>
+                    <input type="password" placeholder="password" name="password" required>
+                </div>
+                <div class="input-box">
+                    <span>Confirm Password</span>
+                    <input type="password" placeholder="password" name="password2" required>
+                </div>
+                <div class="input-button">
+                    <span></span>
+                    <input type="submit" value="Registrar">
+                </div>
+                <div class="input-button">
+                    <p>Have an account? <a href="/index.php/user/login">
+                    <input type="button" value="Login">
+                    </a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,83 @@
+<section class="section-modal">
+
+    <div class="container">
+        <h2>Tela de Consulta</h2>
+        <table class="table" style="width: 100%">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Sexo</th>
+                    <th>Idade</th>
+                    <th>CEP</th>
+                    <th>Logradouro</th>
+                    <th>Bairro</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each clientes}}
+                <tr>
+                    <td>{{this.nome}}</td>
+                    <td>{{this.sexo}}</td>
+                    <td>{{this.idade}}</td>
+                    <td>{{this.cep}}</td>
+                    <td>{{this.logradouro}}</td>
+                    <td>{{this.bairro}}</td>
+                    <td>{{this.cidade}}</td>
+                    <td>{{this.estado}}</td>
+                    <td>
+                        {{!-- <a href="/index.php/clients/editar/{{id}}"><button class="btn btn-primary">Editar</button></a> --}}
+                        <a href="/index.php/clients/delete/{{id}}"><button class="btn btn-danger">Excluir</button></a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+
+
+    <button class="show-modal">Cadastrar</button>
+    <span class="overlay"></span>
+    <div class="modal-box">
+        <form method="post" action="/index.php/clients/store">
+            <h2>Cadastrar</h2>
+            <h3>Quer adicionar uma pessoa?</h3>
+
+            
+
+            <div class="input-box" style="margin-bottom: 10px">
+                <input type="text" name="nome" id="nome" placeholder="Nome" required>
+            
+                <select class="form-select" name="sexo" id="sexo" required>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Não Informado">Prefiro Não responder</option>
+                </select>
+            </div>
+            <div class="input-box" style="margin-bottom: 10px">
+                <input type="number" name="idade" id="idade" placeholder="Idade" required>
+            
+                <input type="text" name="cep" id="cep" minlength="8" maxlength="9" placeholder="CEP" required>
+            </div>
+            <div class="input-box" style="margin-bottom: 10px">
+                <input type="text" name="logradouro" id="logradouro" placeholder="Logradouro" required readonly>
+            
+                <input type="text" name="bairro" id="bairro" placeholder="Bairro" required readonly>
+            </div>
+            <div class="input-box" style="margin-bottom: 10px">
+                <input type="text" name="cidade" id="cidade" placeholder="Cidade" required readonly>
+            
+                <input type="text" name="estado" id="estado" placeholder="Estado" required readonly>
+            </div>
+
+            <div class="buttons">
+                <button class="close-btn">Cancelar</button>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </div>
+</section>
+<script src="/public/js/modal.js"></script>

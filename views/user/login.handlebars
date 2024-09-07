@@ -1,0 +1,72 @@
+<head>
+    <link rel="stylesheet" href="/public/css/login.css">
+    <style>
+        button {
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+            padding: 14px 22px;
+            border: none;
+            background: red;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<div class="container-login">
+    <div class="img-box">
+        <img src="/public/img/logo.png">
+    <div class="content-box">
+        <div class="form-box">
+            <h2>Login</h2>
+            <form id="login">
+                <div class="input-box">
+                    <span>Usuário</span>
+                    <input type="email" placeholder="example@mail.com" name="email" id="email">
+                </div>
+                <div class="input-box">
+                    <span>Senha</span>
+                    <input type="password" placeholder="password" name="password" id="password">
+                </div>
+                <div class="input-button">
+                    <span></span>
+                    <button type="submit" id="entrar">Entrar</button>
+                </div>
+                
+            </form>
+            <div class="input-button">
+                <p>Não possui uma conta? <a href="/index.php/user/register">
+                <input type="button" value="Cadastrar-se!">
+                </a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    document.getElementById('login').addEventListener('submit', function(event){
+
+        event.preventDefault()
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        fetch("/index.php/user/login", {
+            method: "POST",
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({email, password})
+        })
+        .then(response => response.json())
+        .then(data =>{
+            console.log("LOGIN:" + data)
+            if (data){
+                window.location.href = '/index.php/clients/home'
+            }
+        })
+    })
+
+</script>
